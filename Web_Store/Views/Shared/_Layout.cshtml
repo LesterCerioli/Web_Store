@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Web Store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Web Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Cadastro
+                            <span class="carret"></span>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Grupo de Produtos", "GrupoDeProdutos", "Cadastro")</li>
+                            <li>@Html.ActionLink("Marcas de Produtos", "Marcaprodutos", "Cadastro")</li>
+                            <li>@Html.ActionLink("Locais de armazenamento", "LocalArmazenamento", "Cadastro")</li>
+                            <li>@Html.ActionLink("Unidades de medida", "UMedida", "Cadastro")</li>
+                            <li>@Html.ActionLink("Produtos", "Products", "Cadastro")</li>
+                            <li class="nav-divider"></li>
+                            <li>@Html.ActionLink("Países", "Countries", "Cadastro")</li>
+                            <li>@Html.ActionLink("Estados", "States", "Cadastro")</li>
+                            <li>@Html.ActionLink("Cidades", "Cities", "Cadastro")</li>
+                            <li>@Html.ActionLink("Fornecedores", "Fornec", "Cadastro")</li>
+                            <li class="nav-divider"></li>
+                            <li>@Html.ActionLink("Perfis de Usuários", "ProfileUsers", "Cadastro")</li>
+                            <li>@Html.ActionLink("Usuários", "Usersw", "Cadastro")</li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Operações
+                            <span class="carret">
+
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Entrada de Produtos", "EntrProd", "Operacao")</li>
+                            <li>@Html.ActionLink("Saída de Produtos", "ExxitProd", "Operacao")</li>
+                            <li>@Html.ActionLink("Lançamento de perdas de produtos", "LancPer", "Operacao")</li>
+                            <li>@Html.ActionLink("Inventário de Estoque", "InvenStock", "Operacao")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Grafico
+                            <span class="carret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Perdas por mês", "PerdaMes", "Grafico")</li>
+                            <li>@Html.ActionLink("Entradas vs saídas por mês", "EntradaSaidaMesa", "Grafico")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Relatórios
+                            <span class="carret"></span>
+                        </a>
+                        <ul>
+                            <li>@Html.ActionLink("Posição de estoque", "Stockposition", "Relatorio")</li>
+                            <li>@Html.ActionLink("Ressuprimento", "Ressup", "Relatorio")</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Web Store</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
